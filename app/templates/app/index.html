@@ -1,10 +1,40 @@
 {% extends "app/base.html" %}
+{% load static %}
 
-{% block title %} {{ block.super }} Sobre {% endblock title %}
+{% block title %} {{ block.super }} Início {% endblock title %}
+
+
+
+
+{% block h2 %}
+    Percy Jackson e os Olimpianos
+{% endblock h2 %}
+
+{% block lead %}
+    De autoria de: Rick Riordan
+{% endblock lead %}
 
 {% block content %}
-    
-
-
+    Percy Jackson, um semideus de apenas 12 anos, aceita seus recém-descobertos poderes divinos quando o senhor dos deuses, Zeus, o acusa de roubar seu raio. Com a ajuda de um amigo, Percy precisa restaurar a ordem no Olimpo.
+    <div class="container my-4">
+  <div class="row">
+    <div class="col-6 col-md-4">
+      <img class="img-fluid" src="{% static 'app/cover.jfif' %}" alt="cover" />
+    </div>
+    <div class="col-6 col-md-4">
+      <img class="img-fluid" src="{% static 'app/percy.jfif' %}" alt="percy" />
+    </div>
+    <div class="col-6 col-md-4">
+      <img class="img-fluid" src="{% static 'app/Percy-Jackson-S2.webp' %}" alt="foto" />
+    </div>
+  </div>
+</div>
+<div class="container my-4">
+  <div class="row">
+    <div class="col">
+        <img class="w-100" src="{% static 'app/serie.jfif' %}" alt="foto" />
+    </div>
+  </div>
+</div>
 {% endblock content %}
 
