@@ -3,19 +3,16 @@
 
 {% block title %} {{ block.super }} Início {% endblock title %}
 
-
-
-
 {% block h2 %}
-    Percy Jackson e os Olimpianos
+    {{ titulo }}
 {% endblock h2 %}
 
 {% block lead %}
-    De autoria de: Rick Riordan
+    De autoria de: {{ autor }}
 {% endblock lead %}
 
 {% block content %}
-    Percy Jackson, um semideus de apenas 12 anos, aceita seus recém-descobertos poderes divinos quando o senhor dos deuses, Zeus, o acusa de roubar seu raio. Com a ajuda de um amigo, Percy precisa restaurar a ordem no Olimpo.
+    {{ resumo }}
     <div class="container my-4">
   <div class="row">
     <div class="col-6 col-md-4">
