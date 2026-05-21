@@ -10,4 +10,5 @@ def elenco(request):
     return render(request, "app/elenco.html")
 
 def sobre(request):
-    return render(request, "app/sobre.html")
+    context = {"resumo": "Este site tem como objetivo ser um portal para trazer informações sobre a série Percy Jackson e os Olimpianos, baseada nos livros homônimos criados por Rick Riordan.", "autor": "Ibrahim Guilherme Moraes de Oliveira"}
+    return render(request, "app/sobre.html", context)
