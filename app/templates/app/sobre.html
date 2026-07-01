@@ -1,5 +1,4 @@
 {% extends "app/base.html" %}
-{% load static %}
 
 {% block title %} {{ block.super }} Sobre {% endblock title %}
 
@@ -8,9 +7,9 @@
 {% endblock h2 %}
 
 {% block lead %}
-    Criador do site: {{ autor }}
+    Criador do site: {{ serie.autor }}
 {% endblock lead %}
 
 {% block content %}
-    {{ resumo }}
+    {{ serie.resumo }}
 {% endblock content %}

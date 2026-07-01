@@ -17,6 +17,7 @@ class Serie(models.Model):
     ano_de_lancamento = models.CharField(max_length=4)
     resumo = models.TextField()
     elenco = models.ManyToManyField(Ator)
+    capa = models.ImageField(upload_to="capa/")
 
     def __str__(self):
         return self.titulo

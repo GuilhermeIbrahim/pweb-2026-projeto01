@@ -1,0 +1,27 @@
+{% extends "app/base.html" %}
+
+{% block title %}
+{{ block.super }} Configuração
+{% endblock %}
+
+{% block h2 %}
+Sistema não configurado
+{% endblock %}
+
+{% block content %}
+
+<div class="alert alert-warning text-center">
+
+    <h4>Nenhuma série foi cadastrada.</h4>
+
+    <p>
+        O administrador ainda não registrou uma série no sistema.
+    </p>
+
+    <p>
+        Acesse o painel administrativo para cadastrar uma série e seu elenco.
+    </p>
+
+</div>
+
+{% endblock %}

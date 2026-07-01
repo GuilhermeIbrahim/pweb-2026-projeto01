@@ -1,35 +1,21 @@
 {% extends "app/base.html" %}
-{% load static %}
 
 {% block title %} {{ block.super }} Início {% endblock title %}
 
 {% block h2 %}
-    {{ titulo }}
+    {{ serie.titulo }}, {{ serie.ano_de_lancamento }}
 {% endblock h2 %}
 
 {% block lead %}
-    De autoria de: {{ autor }}
+    De autoria de: {{ serie.autor }}
 {% endblock lead %}
 
 {% block content %}
-    {{ resumo }}
-    <div class="container my-4">
-      <div class="row">
-        <div class="col-6 col-md-4">
-          <img class="img-fluid" src="{% static 'app/cover.jfif' %}" alt="cover" />
-        </div>
-        <div class="col-6 col-md-4">
-          <img class="img-fluid" src="{% static 'app/percy.jfif' %}" alt="percy" />
-        </div>
-        <div class="col-6 col-md-4">
-          <img class="img-fluid" src="{% static 'app/Percy-Jackson-S2.webp' %}" alt="foto" />
-        </div>
-      </div>
-    </div>
+    {{ serie.resumo }}
     <div class="container my-4">
       <div class="row">
         <div class="col">
-            <img class="w-100" src="{% static 'app/serie.jfif' %}" alt="foto" />
+            <img class="w-100" src="{{ serie.capa.url }}" alt="foto" />
         </div>
       </div>
     </div>

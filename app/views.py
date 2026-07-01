@@ -1,20 +1,32 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Ator, Serie
 
-# Create your views here.
+def sem_serie(request):
+    return render(request, "app/sem_serie.html")
 
 def index(request):
-    #titulo = #!
-    #resumo = #!
-    #autor =  #!
-    context = {"resumo": resumo.resumo, "autor": autor.autor, "titulo": titulo.titulo}
+    serie = Serie.objects.first()
+    
+    if serie is None:
+        return redirect("sem_serie")
+    
+    context = {"serie": serie}
     return render(request, "app/index.html", context)
 
 def elenco(request):
-    lista_atores = Ator.objects.all()
-    context = {"atores": lista_atores}
+    serie = Serie.objects.first()
+    
+    if serie is None:
+        return redirect("sem_serie")
+    
+    context = {"serie": serie, "atores": serie.elenco.all()}
     return render(request, "app/elenco.html", context)
 
 def sobre(request):
-    context = {"resumo": "Este site tem como objetivo ser um portal para trazer informações sobre a série Percy Jackson e os Olimpianos, baseada nos livros homônimos criados por Rick Riordan.", "autor": "Ibrahim Guilherme Moraes de Oliveira"}
+    serie = Serie.objects.first()
+    
+    if serie is None:
+        return redirect("sem_serie")
+    
+    context = {"serie": serie}
     return render(request, "app/sobre.html", context)
