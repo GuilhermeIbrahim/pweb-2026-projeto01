@@ -28,5 +28,4 @@ def sobre(request):
     if serie is None:
         return redirect("sem_serie")
     
-    context = {"serie": serie}
-    return render(request, "app/sobre.html", context)
+    return render(request, "app/sobre.html")
